@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Building the application..."
+    - # Add your build commands here, e.g., npm install, npm run build, or mvn compile
+
+test_job:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - # Add your test commands here, e.g., npm test, mvn test, or pytest
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying to staging..."
+    - # Add your deploy commands here, e.g., docker build, kubectl apply, or scp to server
+  environment:
+    name: staging
+    url: https://staging.example.com
